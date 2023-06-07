@@ -1,0 +1,34 @@
+package basics;
+import java.net.MalformedURLException;
+import java.net.URL;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+public class AddExiteNode {
+static int y;
+public static void main(String[] args) throws MalformedURLException, InterruptedException {
+		// TODO Auto-generated method stub
+		DesiredCapabilities dc= new DesiredCapabilities();
+        dc.setCapability(MobileCapabilityType.AUTOMATION_NAME , "Appium");
+        dc.setCapability(MobileCapabilityType.PLATFORM_NAME , "Android");
+        dc.setCapability(MobileCapabilityType.PLATFORM_VERSION , "12");
+        dc.setCapability(MobileCapabilityType.DEVICE_NAME, "ceaae327");
+        dc.setCapability("udid","ceaae327");
+        dc.setCapability("appPackage" , "io.beldex.belnet");
+        dc.setCapability("appActivity" , "io.beldex.belnet.MainActivity");
+	    URL d =new URL("http://localhost:4723/wd/hub");
+	    AndroidDriver driver =new AndroidDriver(d,dc);
+		Thread.sleep(5000);
+		for(int i=0;i<=20;i++) {
+	    Thread.sleep(5000);
+		WebElement seven10=driver.findElement(By.xpath("//android.view.View[@index='4']")); // Click on start button
+	    seven10.click();
+	    Thread.sleep(21000);
+	   WebElement seven311=driver.findElement(By.xpath("//android.widget.ImageView[@index='5']")); // Click on start button
+	    seven311.click();
+	    Thread.sleep(8000);
+	    y++;
+	    System.out.println("   "+"Test Run"+y+"Times  ");
+}}}
